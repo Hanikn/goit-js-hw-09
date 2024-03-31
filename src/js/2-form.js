@@ -21,8 +21,9 @@ form.addEventListener('input', event => {
 
 form.addEventListener('submit', function (event) {
   event.preventDefault();
-  if (email.value == '' || message.value == '') {
-    return alert('Please enter the data');
+  if (email.value === '' || message.value === '') {
+    // Використання строгого порівняння (===)
+    return alert('Please enter data in all required fields.'); // Уточнення щодо обов'язкових полів
   }
   const formData = {
     email: email.value.trim(),
@@ -36,5 +37,5 @@ form.addEventListener('submit', function (event) {
 });
 
 function saveFormData(formData) {
-  localStorage.setItem('STORAGE_KEY', JSON.stringify(formData));
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
 }
